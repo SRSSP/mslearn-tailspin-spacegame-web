@@ -57,7 +57,13 @@ steps:
     publishWebProjects: false
     arguments: '--no-build --configuration Release -o $(BuilId.ArtifactStagingDirectory)/Release'
     zipAferPublish: true
+
+- task: CopyFiles@2
+    inputs:
+        targetFolder: '$(Build.ArtifactStagingDirectory)/Release'        
     
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(build.artigactstagingdirectory)/release'
   condition: succeeded()
