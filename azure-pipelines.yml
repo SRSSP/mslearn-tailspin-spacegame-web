@@ -55,7 +55,7 @@ steps:
     command: 'publish'
     projects: '**/*.csproj'
     publishWebProjects: false
-    arguments: '--no-build --configuration Release --output $(BuilId.ArtifactStagingDirectory)/Release'
+    arguments: '--no-build --configuration Release -o $(BuilId.ArtifactStagingDirectory)/Release'
     zipAferPublish: true
     
 - task: PublishBuildArtifacts@1
